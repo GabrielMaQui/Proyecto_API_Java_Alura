@@ -1,5 +1,6 @@
 package principal;
 
+import modelos.dto.ResponseApi;
 import service.ConsumoAPI;
 
 public class Main {
@@ -8,7 +9,7 @@ public class Main {
 
         ConsumoAPI api = new ConsumoAPI();
 
-        String json = api.obtenerDatos("USD");
-        System.out.println(json);
+        ResponseApi json = api.obtenerConversion("USD", "PEN", "1");
+        System.out.println(json.result());
     }
 }
